@@ -2,175 +2,1008 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Portfolio | Phạm Thu Trà</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-    body {
-      font-family: Arial, sans-serif;
-      background: #f8f5ef;
-      color: #40382f;
-      line-height: 1.7;
-    }
+html {
+  scroll-behavior: smooth;
+}
 
-    header {
-      padding: 24px 8%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
+body {
+  font-family: Arial, sans-serif;
+  background: #f6f9fc;
+  color: #19365d;
+  line-height: 1.7;
+}
 
-    header h2 {
-      color: #795b43;
-    }
+button, a {
+  font-family: inherit;
+}
 
-    nav a {
-      color: #40382f;
-      text-decoration: none;
-      margin-left: 18px;
-    }
+/* HEADER */
 
-    .hero {
-      padding: 90px 8%;
-      text-align: center;
-    }
+header {
+  background: #fff;
+  border-bottom: 1px solid #dfe6ef;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
 
-    .hero h1 {
-      font-size: 42px;
-      margin: 15px 0;
-    }
+.header-inner {
+  max-width: 1200px;
+  margin: auto;
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
 
-    .hero p {
-      max-width: 600px;
-      margin: auto;
-    }
+.logo {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #19365d;
+  cursor: pointer;
+}
 
-    .tag {
-      color: #94765b;
-      letter-spacing: 3px;
-    }
+nav {
+  display: flex;
+  gap: 25px;
+}
 
-    section {
-      padding: 55px 10%;
-    }
+nav button {
+  border: none;
+  background: none;
+  color: #61738c;
+  font-size: 16px;
+  cursor: pointer;
+}
 
-    section h2 {
-      color: #795b43;
-      margin-bottom: 20px;
-    }
+nav button:hover,
+nav button.active {
+  color: #19365d;
+  font-weight: bold;
+}
 
-    .project {
-      background: white;
-      padding: 22px;
-      border-radius: 12px;
-      margin: 15px 0;
-    }
+/* CÁC TRANG */
 
-    .project h3 {
-      margin-bottom: 8px;
-    }
+.view[hidden] {
+  display: none !important;
+}
 
-    .contact {
-      text-align: center;
-      background: #eee5d9;
-    }
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 45px 24px;
+}
 
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 14px;
-    }
+/* TRANG CHỦ */
 
-    a {
-      color: #795b43;
-    }
+.home-hero {
+  text-align: center;
+  padding: 90px 24px 85px;
+  background: linear-gradient(135deg, #edf3fa, #f8fafc);
+}
 
-    @media (max-width: 600px) {
-      .hero h1 {
-        font-size: 30px;
-      }
+.eyebrow {
+  color: #254c79;
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 3px;
+}
 
-      nav a {
-        margin-left: 8px;
-      }
-    }
-  </style>
+.home-hero h1 {
+  font-size: 52px;
+  line-height: 1.2;
+  margin: 20px 0;
+  color: #19365d;
+}
+
+.home-hero p {
+  max-width: 850px;
+  margin: auto;
+  color: #61738c;
+  font-size: 19px;
+}
+
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 35px;
+}
+
+/* BUTTON */
+
+.btn {
+  display: inline-block;
+  padding: 14px 24px;
+  border-radius: 9px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.btn-primary {
+  background: #19365d;
+  color: white;
+  border: 1px solid #19365d;
+}
+
+.btn-primary:hover {
+  background: #294f7c;
+}
+
+.btn-outline {
+  background: transparent;
+  color: #19365d;
+  border: 1px solid #a9bfd9;
+}
+
+.btn-outline:hover {
+  background: #eaf0f7;
+}
+
+.back-btn {
+  border: none;
+  background: transparent;
+  color: #315d91;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 25px;
+}
+
+/* PHẦN TRANG CON */
+
+.page-hero {
+  background: linear-gradient(120deg, #edf3fa, #f8fafc);
+  border-bottom: 1px solid #dfe6ef;
+}
+
+.page-hero .container {
+  padding-top: 65px;
+  padding-bottom: 60px;
+}
+
+.page-hero h1 {
+  font-size: 48px;
+  margin: 12px 0;
+}
+
+.page-hero p {
+  color: #61738c;
+  font-size: 18px;
+  max-width: 900px;
+}
+
+.content-section {
+  padding: 50px 0 80px;
+}
+
+.content-section h2 {
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+
+.section-description {
+  color: #61738c;
+  font-size: 17px;
+  margin-bottom: 28px;
+}
+
+/* DANH SÁCH CARD */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+.card {
+  background: white;
+  border: 1px solid #dce5ef;
+  border-radius: 15px;
+  padding: 28px;
+  min-height: 230px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(25, 54, 93, 0.08);
+}
+
+.card-number {
+  color: #254c79;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.card h3 {
+  font-size: 21px;
+  margin-bottom: 8px;
+}
+
+.card p {
+  color: #61738c;
+  font-size: 16px;
+}
+
+.card-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-top: 25px;
+  flex-wrap: wrap;
+}
+
+.status {
+  display: inline-block;
+  background: #edf2f7;
+  color: #61738c;
+  border-radius: 30px;
+  padding: 7px 13px;
+  font-size: 13px;
+}
+
+.card-link {
+  border: none;
+  background: none;
+  color: #19365d;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.card-link:hover {
+  color: #547ba8;
+}
+
+/* NỘI DUNG CHI TIẾT */
+
+.detail-box {
+  background: white;
+  border: 1px solid #dce5ef;
+  border-radius: 15px;
+  padding: 35px;
+}
+
+.detail-box h1 {
+  font-size: 34px;
+  margin: 12px 0;
+}
+
+.detail-box h2 {
+  font-size: 21px;
+  margin: 28px 0 10px;
+  color: #19365d;
+}
+
+.detail-box p,
+.detail-box li {
+  color: #61738c;
+  font-size: 16px;
+}
+
+.detail-box ul {
+  padding-left: 23px;
+}
+
+.evidence-box {
+  margin-top: 15px;
+  padding: 25px;
+  border: 1px dashed #a9bfd9;
+  border-radius: 10px;
+  background: #f8fafc;
+  color: #61738c;
+  text-align: center;
+}
+
+.evidence-box a {
+  color: #254c79;
+  font-weight: bold;
+}
+
+.evidence-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-top: 15px;
+}
+
+/* FOOTER */
+
+footer {
+  background: white;
+  border-top: 1px solid #dfe6ef;
+  padding: 25px 24px;
+  color: #61738c;
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 700px) {
+  .header-inner {
+    flex-direction: column;
+  }
+
+  nav {
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .home-hero h1 {
+    font-size: 34px;
+  }
+
+  .home-hero p {
+    font-size: 16px;
+  }
+
+  .page-hero h1 {
+    font-size: 34px;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    min-height: 210px;
+    padding: 22px;
+  }
+
+  .detail-box {
+    padding: 22px;
+  }
+
+  .detail-box h1 {
+    font-size: 27px;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <header>
-    <h2>MY PORTFOLIO</h2>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+<!-- HEADER -->
 
-  <div class="hero">
-    <p class="tag">WELCOME TO MY PORTFOLIO</p>
-    <h1>Xin chào, mình là [Tên của bạn]</h1>
+<header>
+  <div class="header-inner">
+
+    <div class="logo" onclick="showView('home')">
+      MY PORTFOLIO.
+    </div>
+
+    <nav>
+      <button onclick="showView('home')">Trang chủ</button>
+      <button onclick="showView('aboutPage')">Giới thiệu</button>
+      <button onclick="showView('projectsPage')">Dự án</button>
+      <button onclick="goContact()">Liên hệ</button>
+    </nav>
+
+  </div>
+</header>
+
+
+<!-- TRANG CHỦ -->
+
+<main id="home" class="view">
+
+  <div class="home-hero">
+
+    <div class="eyebrow">
+      MUSIC EDUCATION PORTFOLIO
+    </div>
+
+    <h1>
+      Xin chào,<br>
+      mình là Phạm Thu Trà
+    </h1>
+
     <p>
-      Sinh viên Sư phạm Âm nhạc.
-      Yêu thích âm nhạc, nghệ thuật
-      và hành trình khám phá những điều mới.
+      Mình hiện đang theo học ngành Sư phạm Âm nhạc
+      tại Trường Đại học Sư phạm Nghệ thuật Trung ương.
+      Đây là không gian giới thiệu bản thân và lưu giữ
+      những sản phẩm trong quá trình học tập của mình.
     </p>
+
+    <div class="hero-actions">
+
+      <button class="btn btn-primary"
+        onclick="showView('projectsPage')">
+        Khám phá dự án
+      </button>
+
+      <button class="btn btn-outline"
+        onclick="showView('aboutPage')">
+        Tìm hiểu về mình
+      </button>
+
+    </div>
+
   </div>
 
-  <section id="about">
-    <h2>01. About Me</h2>
-    <p>
-      Xin chào! Mình là Phạm Thu Trà, hiện đang theo học ngành Sư phạm Âm nhạc tại Trường Đại học Sư phạm Nghệ thuật Trung ương.
-    </p> 
-  </section>
+  <div class="container">
 
-  <section id="projects">
-    <h2>02. My Projects</h2>
+    <section class="content-section" id="contactHome">
 
-    <div class="project">
-      <h3>Khám phá sáo trúc cùng AI</h3>
-      <p>
-        Dự án tìm hiểu nhạc cụ truyền thống Việt Nam
-        và ứng dụng AI trong dạy học âm nhạc.
+      <h2>Liên hệ</h2>
+
+      <p class="section-description">
+        Cảm ơn bạn đã ghé thăm Portfolio của mình.
       </p>
+
+      <p>Email: Bổ sung email của bạn tại đây.</p>
+
+    </section>
+
+  </div>
+
+</main>
+
+
+<!-- TRANG TÌM HIỂU VỀ MÌNH -->
+
+<main id="aboutPage" class="view" hidden>
+
+  <div class="page-hero">
+    <div class="container">
+
+      <div class="eyebrow">ABOUT ME</div>
+
+      <h1>Tìm hiểu về mình</h1>
+
+      <p>
+        Một vài thông tin về bản thân, quá trình học tập,
+        những kỹ năng và định hướng cá nhân.
+      </p>
+
+      <button class="btn btn-outline"
+        style="margin-top:25px"
+        onclick="showView('home')">
+        ← Quay về trang chủ
+      </button>
+
+    </div>
+  </div>
+
+  <div class="container content-section">
+
+    <h2>Đôi nét về bản thân</h2>
+
+    <p class="section-description">
+      Khám phá những khía cạnh khác nhau về mình.
+    </p>
+
+    <div class="card-grid">
+
+      <div class="card">
+        <div>
+          <div class="card-number">01. INTRODUCTION</div>
+          <h3>Giới thiệu bản thân</h3>
+          <p>Những thông tin cơ bản và đôi nét về con người mình.</p>
+        </div>
+        <div class="card-bottom">
+          <span class="status">Thông tin cá nhân</span>
+          <button class="card-link"
+            onclick="openDetail('about','intro')">
+            Tìm hiểu thêm →
+          </button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div>
+          <div class="card-number">02. EDUCATION</div>
+          <h3>Quá trình học tập</h3>
+          <p>Những dấu mốc và trải nghiệm trong học tập.</p>
+        </div>
+        <div class="card-bottom">
+          <span class="status">Học vấn</span>
+          <button class="card-link"
+            onclick="openDetail('about','education')">
+            Tìm hiểu thêm →
+          </button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div>
+          <div class="card-number">03. SKILLS</div>
+          <h3>Kỹ năng và năng lực</h3>
+          <p>Những kỹ năng mình đã và đang rèn luyện.</p>
+        </div>
+        <div class="card-bottom">
+          <span class="status">Năng lực</span>
+          <button class="card-link"
+            onclick="openDetail('about','skills')">
+            Tìm hiểu thêm →
+          </button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div>
+          <div class="card-number">04. INTERESTS</div>
+          <h3>Sở thích và định hướng</h3>
+          <p>Những điều mình quan tâm và mục tiêu tương lai.</p>
+        </div>
+        <div class="card-bottom">
+          <span class="status">Định hướng</span>
+          <button class="card-link"
+            onclick="openDetail('about','interests')">
+            Tìm hiểu thêm →
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</main>
+
+
+<!-- TRANG DANH SÁCH DỰ ÁN -->
+
+<main id="projectsPage" class="view" hidden>
+
+  <div class="page-hero">
+    <div class="container">
+
+      <div class="eyebrow">
+        DIGITAL TECHNOLOGY · PROJECTS
+      </div>
+
+      <h1>Dự án học tập</h1>
+
+      <p>
+        Sáu bài tập thực hành thuộc học phần Công nghệ số.
+        Mỗi bài tập có một trang riêng để trình bày mục tiêu,
+        quá trình thực hiện và minh chứng.
+      </p>
+
+      <div class="hero-actions"
+        style="justify-content:flex-start">
+
+        <button class="btn btn-primary"
+          onclick="document.getElementById('projectList').scrollIntoView({behavior:'smooth'})">
+          Khám phá 6 bài tập
+        </button>
+
+        <button class="btn btn-outline"
+          onclick="showView('home')">
+          Quay về Trang chủ
+        </button>
+
+      </div>
+
+    </div>
+  </div>
+
+  <div class="container content-section" id="projectList">
+
+    <h2>Danh sách bài tập</h2>
+
+    <p class="section-description">
+      Mỗi bài tập có một trang riêng để bổ sung quá trình
+      thực hiện, báo cáo và minh chứng. Các trạng thái sẽ
+      được cập nhật theo kết quả thực tế.
+    </p>
+
+    <div class="card-grid">
+
+      <!-- BÀI TẬP 01 -->
+
+      <div class="card">
+        <div>
+          <div class="card-number">BÀI TẬP 01</div>
+          <h3>Quản lý tệp và thư mục</h3>
+          <p>
+            Thực hành quản lý tệp và thư mục trong Windows,
+            kèm ảnh minh chứng.
+          </p>
+        </div>
+
+        <div class="card-bottom">
+          <span class="status">Đã cập nhật minh chứng</span>
+          <button class="card-link"
+            onclick="openDetail('project','project1')">
+            Xem trang bài tập →
+          </button>
+        </div>
+      </div>
+
+
+      <!-- BÀI TẬP 02 -->
+
+      <div class="card">
+        <div>
+          <div class="card-number">BÀI TẬP 02</div>
+          <h3>Tìm kiếm tài liệu học thuật</h3>
+          <p>
+            Tìm kiếm và đánh giá tài liệu học thuật
+            theo chủ đề đã chọn.
+          </p>
+        </div>
+
+        <div class="card-bottom">
+          <span class="status">Đã cập nhật minh chứng</span>
+          <button class="card-link"
+            onclick="openDetail('project','project2')">
+            Xem trang bài tập →
+          </button>
+        </div>
+      </div>
+
+
+      <!-- BÀI TẬP 03 -->
+
+      <div class="card">
+        <div>
+          <div class="card-number">BÀI TẬP 03</div>
+          <h3>Kỹ năng viết Prompt và sử dụng AI</h3>
+          <p>
+            Thử nghiệm chín prompt cho ba nhiệm vụ học tập
+            và so sánh kết quả.
+          </p>
+        </div>
+
+        <div class="card-bottom">
+          <span class="status">Đã cập nhật minh chứng</span>
+          <button class="card-link"
+            onclick="openDetail('project','project3')">
+            Xem trang bài tập →
+          </button>
+        </div>
+      </div>
+
+
+      <!-- BÀI TẬP 04 -->
+
+      <div class="card">
+        <div>
+          <div class="card-number">BÀI TẬP 04</div>
+          <h3>Hợp tác và họp trực tuyến</h3>
+          <p>
+            Lên kế hoạch, tham gia họp nhóm trực tuyến
+            và tổng hợp kết quả.
+          </p>
+        </div>
+
+        <div class="card-bottom">
+          <span class="status">Chưa cập nhật minh chứng</span>
+          <button class="card-link"
+            onclick="openDetail('project','project4')">
+            Xem trang bài tập →
+          </button>
+        </div>
+      </div>
+
+
+      <!-- BÀI TẬP 05 -->
+
+      <div class="card">
+        <div>
+          <div class="card-number">BÀI TẬP 05</div>
+          <h3>Bài tập thực hành số 5</h3>
+          <p>
+            Nội dung sẽ bổ sung sau khi đối chiếu
+            yêu cầu cụ thể của giảng viên.
+          </p>
+        </div>
+
+        <div class="card-bottom">
+          <span class="status">Chưa cập nhật minh chứng</span>
+          <button class="card-link"
+            onclick="openDetail('project','project5')">
+            Xem trang bài tập →
+          </button>
+        </div>
+      </div>
+
+
+      <!-- BÀI TẬP 06 -->
+
+      <div class="card">
+        <div>
+          <div class="card-number">BÀI TẬP 06</div>
+          <h3>Bài tập thực hành số 6</h3>
+          <p>
+            Nội dung sẽ bổ sung sau khi đối chiếu
+            yêu cầu cụ thể của giảng viên.
+          </p>
+        </div>
+
+        <div class="card-bottom">
+          <span class="status">Chưa cập nhật minh chứng</span>
+          <button class="card-link"
+            onclick="openDetail('project','project6')">
+            Xem trang bài tập →
+          </button>
+        </div>
+      </div>
+
     </div>
 
-    <div class="project">
-      <h3>Music Teaching</h3>
-      <p>
-        Các hoạt động giảng dạy, giáo án
-        và trải nghiệm âm nhạc.
-      </p>
+    <p style="margin-top:30px;color:#61738c">
+      Lưu ý: Bài 5 và bài 6 đang để tên tạm,
+      chưa xác định nội dung khi chưa có hướng dẫn cụ thể.
+    </p>
+
+  </div>
+
+</main>
+
+
+<!-- TRANG NỘI DUNG CHI TIẾT -->
+
+<main id="detailPage" class="view" hidden>
+
+  <div class="container">
+
+    <button class="back-btn" onclick="goBack()">
+      ← Quay lại danh sách
+    </button>
+
+    <div class="detail-box" id="detailContent">
     </div>
 
-    <div class="project">
-      <h3>My Music Journey</h3>
+  </div>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+  <div class="footer-inner">
+    <span>© 2026 Phạm Thu Trà · Portfolio học tập</span>
+    <span>Sư phạm Âm nhạc</span>
+  </div>
+</footer>
+
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+// CHUYỂN GIỮA CÁC TRANG
+
+let previousPage = 'home';
+
+function showView(id) {
+
+  document.querySelectorAll('.view').forEach(view => {
+    view.hidden = true;
+  });
+
+  document.getElementById(id).hidden = false;
+
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+
+}
+
+
+// MỞ TRANG CHI TIẾT
+
+function openDetail(type, id) {
+
+  previousPage = type === 'project'
+    ? 'projectsPage'
+    : 'aboutPage';
+
+  let data = type === 'project'
+    ? projectDetails[id]
+    : aboutDetails[id];
+
+  if (!data) return;
+
+  let content = `
+    <div class="eyebrow">${data.label}</div>
+
+    <h1>${data.title}</h1>
+
+    <p>${data.description}</p>
+
+    <h2>1. Mục tiêu</h2>
+    <p>${data.objective}</p>
+
+    <h2>2. Nội dung thực hiện</h2>
+    <p>${data.process}</p>
+
+    <h2>3. Kết quả</h2>
+    <p>${data.result}</p>
+
+    <h2>4. Hình ảnh và tài liệu minh chứng</h2>
+
+    <div class="evidence-box">
       <p>
-        Những sản phẩm học tập, biểu diễn
-        và trải nghiệm nghệ thuật.
+        ${data.evidence}
       </p>
     </div>
-  </section>
+  `;
 
-  <section id="contact" class="contact">
-    <h2>03. Contact</h2>
-    <p>Email: [Email của bạn]</p>
-    <p>Thank you for visiting my portfolio!</p>
-  </section>
+  document.getElementById('detailContent').innerHTML = content;
 
-  <footer>
-    © 2026 My Portfolio. All rights reserved.
-  </footer>
+  showView('detailPage');
+
+}
+
+
+// QUAY LẠI TRANG TRƯỚC
+
+function goBack() {
+  showView(previousPage);
+}
+
+
+// ĐI ĐẾN LIÊN HỆ
+
+function goContact() {
+
+  showView('home');
+
+  setTimeout(() => {
+    document.getElementById('contactHome')
+      .scrollIntoView({behavior:'smooth'});
+  }, 100);
+
+}
+
+
+// DỮ LIỆU CÁC BÀI TẬP
+
+const projectDetails = {
+
+  project1: {
+    label: 'BÀI TẬP 01',
+    title: 'Quản lý tệp và thư mục',
+    description: 'Thực hành quản lý tệp và thư mục trong Windows.',
+    objective: 'Bổ sung mục tiêu theo yêu cầu cụ thể của bài tập.',
+    process: 'Trình bày các bước tạo, sắp xếp, đổi tên, sao chép hoặc quản lý tệp và thư mục đã thực hiện.',
+    result: 'Bổ sung kết quả thực tế sau khi hoàn thành bài tập.',
+    evidence: 'Bổ sung ảnh chụp màn hình các bước thực hiện và kết quả tại đây.'
+  },
+
+  project2: {
+    label: 'BÀI TẬP 02',
+    title: 'Tìm kiếm tài liệu học thuật',
+    description: 'Tìm kiếm và đánh giá tài liệu học thuật theo chủ đề đã chọn.',
+    objective: 'Bổ sung mục tiêu của nhiệm vụ tìm kiếm tài liệu.',
+    process: 'Trình bày từ khóa, công cụ tìm kiếm, nguồn tài liệu và cách đánh giá độ tin cậy.',
+    result: 'Bổ sung danh sách tài liệu đã tìm được và nhận xét.',
+    evidence: 'Bổ sung ảnh chụp quá trình tìm kiếm và tài liệu đã lựa chọn.'
+  },
+
+  project3: {
+    label: 'BÀI TẬP 03',
+    title: 'Kỹ năng viết Prompt và sử dụng AI',
+    description: 'Thử nghiệm chín prompt cho ba nhiệm vụ học tập và so sánh kết quả.',
+    objective: 'Bổ sung mục tiêu sử dụng AI trong các nhiệm vụ học tập.',
+    process: 'Trình bày các prompt đã viết, kết quả nhận được và cách điều chỉnh yêu cầu.',
+    result: 'So sánh, đánh giá kết quả và rút ra nhận xét.',
+    evidence: 'Bổ sung ảnh chụp các prompt và kết quả thực hiện.'
+  },
+
+  project4: {
+    label: 'BÀI TẬP 04',
+    title: 'Hợp tác và họp trực tuyến',
+    description: 'Lên kế hoạch, tham gia họp nhóm trực tuyến và tổng hợp kết quả.',
+    objective: 'Bổ sung mục tiêu của hoạt động làm việc nhóm.',
+    process: 'Trình bày quá trình lên kế hoạch, trao đổi và phân công nhiệm vụ.',
+    result: 'Bổ sung kết quả làm việc nhóm.',
+    evidence: 'Bổ sung hình ảnh cuộc họp và sản phẩm tổng hợp.'
+  },
+
+  project5: {
+    label: 'BÀI TẬP 05',
+    title: 'Bài tập thực hành số 5',
+    description: 'Nội dung sẽ được cập nhật sau.',
+    objective: 'Bổ sung sau khi có yêu cầu của giảng viên.',
+    process: 'Bổ sung các bước thực hiện.',
+    result: 'Bổ sung kết quả thực tế.',
+    evidence: 'Chưa cập nhật minh chứng.'
+  },
+
+  project6: {
+    label: 'BÀI TẬP 06',
+    title: 'Bài tập thực hành số 6',
+    description: 'Nội dung sẽ được cập nhật sau.',
+    objective: 'Bổ sung sau khi có yêu cầu của giảng viên.',
+    process: 'Bổ sung các bước thực hiện.',
+    result: 'Bổ sung kết quả thực tế.',
+    evidence: 'Chưa cập nhật minh chứng.'
+  }
+
+};
+
+
+// DỮ LIỆU GIỚI THIỆU BẢN THÂN
+
+const aboutDetails = {
+
+  intro: {
+    label: 'ABOUT ME',
+    title: 'Giới thiệu bản thân',
+    description: 'Xin chào, mình là Phạm Thu Trà, sinh viên ngành Sư phạm Âm nhạc tại Trường Đại học Sư phạm Nghệ thuật Trung ương.',
+    objective: 'Mình yêu thích âm nhạc và quan tâm đến những hoạt động sáng tạo, chia sẻ âm nhạc.',
+    process: 'Mình có cơ hội tìm hiểu nhạc cụ, tham gia các hoạt động âm nhạc và trải nghiệm việc đồng hành cùng các em nhỏ trong học tập.',
+    result: 'Những trải nghiệm này giúp mình hiểu hơn về sở thích, khả năng và hướng đi mà bản thân muốn theo đuổi.',
+    evidence: 'Có thể bổ sung ảnh chân dung hoặc những hình ảnh hoạt động cá nhân tại đây.'
+  },
+
+  education: {
+    label: 'EDUCATION',
+    title: 'Quá trình học tập',
+    description: 'Những dấu mốc trong quá trình học tập của mình.',
+    objective: 'Theo đuổi ngành Sư phạm Âm nhạc và tích lũy kiến thức về âm nhạc, nghệ thuật.',
+    process: 'Bổ sung thông tin về trường học, các môn học, khóa học và hoạt động đã tham gia.',
+    result: 'Bổ sung những kết quả và dấu mốc học tập đáng nhớ.',
+    evidence: 'Có thể bổ sung hình ảnh, chứng nhận hoặc sản phẩm học tập.'
+  },
+
+  skills: {
+    label: 'SKILLS',
+    title: 'Kỹ năng và năng lực',
+    description: 'Một số kỹ năng mình đang rèn luyện và phát triển.',
+    objective: 'Hoàn thiện khả năng âm nhạc và những kỹ năng cần thiết trong học tập.',
+    process: 'Bổ sung các kỹ năng thực tế như sử dụng nhạc cụ, làm việc nhóm, trình bày và ứng dụng công nghệ.',
+    result: 'Bổ sung những kỹ năng đã đạt được và minh chứng tương ứng.',
+    evidence: 'Có thể thêm video, hình ảnh hoặc sản phẩm thể hiện kỹ năng.'
+  },
+
+  interests: {
+    label: 'INTERESTS',
+    title: 'Sở thích và định hướng',
+    description: 'Những điều mình quan tâm và mong muốn thực hiện trong tương lai.',
+    objective: 'Tiếp tục khám phá âm nhạc và tìm kiếm những trải nghiệm phù hợp với bản thân.',
+    process: 'Bổ sung sở thích, hoạt động yêu thích và những lĩnh vực muốn tìm hiểu.',
+    result: 'Mục tiêu hướng đến là trở thành một người làm giáo dục âm nhạc có trách nhiệm và giàu nhiệt huyết.',
+    evidence: 'Có thể bổ sung hình ảnh hoạt động, biểu diễn hoặc những trải nghiệm đáng nhớ.'
+  }
+
+};
+
+</script>
 
 </body>
 </html>
+
