@@ -1,0 +1,178 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8f5ef;
+      color: #40382f;
+      line-height: 1.7;
+    }
+
+    header {
+      padding: 24px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    header h2 {
+      color: #795b43;
+    }
+
+    nav a {
+      color: #40382f;
+      text-decoration: none;
+      margin-left: 18px;
+    }
+
+    .hero {
+      padding: 90px 8%;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      margin: 15px 0;
+    }
+
+    .hero p {
+      max-width: 600px;
+      margin: auto;
+    }
+
+    .tag {
+      color: #94765b;
+      letter-spacing: 3px;
+    }
+
+    section {
+      padding: 55px 10%;
+    }
+
+    section h2 {
+      color: #795b43;
+      margin-bottom: 20px;
+    }
+
+    .project {
+      background: white;
+      padding: 22px;
+      border-radius: 12px;
+      margin: 15px 0;
+    }
+
+    .project h3 {
+      margin-bottom: 8px;
+    }
+
+    .contact {
+      text-align: center;
+      background: #eee5d9;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+    }
+
+    a {
+      color: #795b43;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 30px;
+      }
+
+      nav a {
+        margin-left: 8px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h2>MY PORTFOLIO</h2>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <p class="tag">WELCOME TO MY PORTFOLIO</p>
+    <h1>Xin chào, mình là [Tên của bạn]</h1>
+    <p>
+      Sinh viên Sư phạm Âm nhạc.
+      Yêu thích âm nhạc, nghệ thuật
+      và hành trình khám phá những điều mới.
+    </p>
+  </div>
+
+  <section id="about">
+    <h2>01. About Me</h2>
+    <p>
+      Mình là một người yêu âm nhạc và luôn mong muốn
+      phát triển bản thân trong lĩnh vực nghệ thuật
+      và giáo dục âm nhạc.
+    </p>
+  </section>
+
+  <section id="projects">
+    <h2>02. My Projects</h2>
+
+    <div class="project">
+      <h3>Khám phá sáo trúc cùng AI</h3>
+      <p>
+        Dự án tìm hiểu nhạc cụ truyền thống Việt Nam
+        và ứng dụng AI trong dạy học âm nhạc.
+      </p>
+    </div>
+
+    <div class="project">
+      <h3>Music Teaching</h3>
+      <p>
+        Các hoạt động giảng dạy, giáo án
+        và trải nghiệm âm nhạc.
+      </p>
+    </div>
+
+    <div class="project">
+      <h3>My Music Journey</h3>
+      <p>
+        Những sản phẩm học tập, biểu diễn
+        và trải nghiệm nghệ thuật.
+      </p>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>03. Contact</h2>
+    <p>Email: [Email của bạn]</p>
+    <p>Thank you for visiting my portfolio!</p>
+  </section>
+
+  <footer>
+    © 2026 My Portfolio. All rights reserved.
+  </footer>
+
+</body>
+</html>
