@@ -1,1004 +1,737 @@
-
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My Portfolio | Phạm Thu Trà</title>
-
-<style>
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    background: #F8F5EF;
-    color: #40382F;
-    line-height: 1.7;
-}
-
-button, a {
-  font-family: inherit;
-}
-
-/* HEADER */
-
-header {
-  background: #fff;
-  border-bottom: 1px solid #E5D9CA;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-
-.header-inner {
-  max-width: 1200px;
-  margin: auto;
-  padding: 16px 24px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-}
-
-.logo {
-  font-size: 22px;
-  font-weight: 800;
-  letter-spacing: 2px;
-  color: #795B43;
-  cursor: pointer;
-}
-
-nav {
-  display: flex;
-  gap: 25px;
-}
-
-nav button {
-  border: none;
-  background: none;
-  color: #61738c;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-nav button:hover,
-nav button.active {
-  color: #795B43;
-  font-weight: bold;
-}
-
-/* CÁC TRANG */
-
-.view[hidden] {
-  display: none !important;
-}
-
-.container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 45px 24px;
-}
-
-/* TRANG CHỦ */
-
-.home-hero {
-  text-align: center;
-  padding: 90px 24px 85px;
-  background: linear-gradient(135deg, #edf3fa, #f8fafc);
-}
-
-.eyebrow {
-  color: #254c79;
-  font-size: 15px;
-  font-weight: bold;
-  letter-spacing: 3px;
-}
-
-.home-hero h1 {
-  font-size: 52px;
-  line-height: 1.2;
-  margin: 20px 0;
-  color: #795B43;
-}
-
-.home-hero p {
-  max-width: 850px;
-  margin: auto;
-  color: #61738c;
-  font-size: 19px;
-}
-
-.hero-actions {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 15px;
-  margin-top: 35px;
-}
-
-/* BUTTON */
-
-.btn {
-  display: inline-block;
-  padding: 14px 24px;
-  border-radius: 9px;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-  text-decoration: none;
-  transition: 0.2s;
-}
-
-.btn-primary {
-  background: #795B43;
-  color: white;
-  border: 1px solid #795B43;
-}
-
-.btn-primary:hover {
-  background: #294f7c;
-}
-
-.btn-outline {
-  background: transparent;
-  color: #795B43;
-  border: 1px solid #a9bfd9;
-}
-
-.btn-outline:hover {
-  background: #eaf0f7;
-}
-
-.back-btn {
-  border: none;
-  background: transparent;
-  color: #315d91;
-  font-size: 15px;
-  font-weight: bold;
-  cursor: pointer;
-  margin-bottom: 25px;
-}
-
-/* PHẦN TRANG CON */
-
-.page-hero {
-  background: linear-gradient(120deg, #edf3fa, #f8fafc);
-  border-bottom: 1px solid #E5D9CA;
-}
-
-.page-hero .container {
-  padding-top: 65px;
-  padding-bottom: 60px;
-}
-
-.page-hero h1 {
-  font-size: 48px;
-  margin: 12px 0;
-}
-
-.page-hero p {
-  color: #61738c;
-  font-size: 18px;
-  max-width: 900px;
-}
-
-.content-section {
-  padding: 50px 0 80px;
-}
-
-.content-section h2 {
-  font-size: 28px;
-  margin-bottom: 12px;
-}
-
-.section-description {
-  color: #61738c;
-  font-size: 17px;
-  margin-bottom: 28px;
-}
-
-/* DANH SÁCH CARD */
-
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 22px;
-}
-
-.card {
-  background: white;
-  border: 1px solid #dce5ef;
-  border-radius: 15px;
-  padding: 28px;
-  min-height: 230px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  transition: 0.2s;
-}
-
-.card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(25, 54, 93, 0.08);
-}
-
-.card-number {
-  color: #254c79;
-  font-size: 14px;
-  font-weight: bold;
-  letter-spacing: 2px;
-  margin-bottom: 10px;
-}
-
-.card h3 {
-  font-size: 21px;
-  margin-bottom: 8px;
-}
-
-.card p {
-  color: #61738c;
-  font-size: 16px;
-}
-
-.card-bottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 10px;
-  margin-top: 25px;
-  flex-wrap: wrap;
-}
-
-.status {
-  display: inline-block;
-  background: #edf2f7;
-  color: #61738c;
-  border-radius: 30px;
-  padding: 7px 13px;
-  font-size: 13px;
-}
-
-.card-link {
-  border: none;
-  background: none;
-  color: #795B43;
-  font-weight: bold;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.card-link:hover {
-  color: #547ba8;
-}
-
-/* NỘI DUNG CHI TIẾT */
-
-.detail-box {
-  background: white;
-  border: 1px solid #dce5ef;
-  border-radius: 15px;
-  padding: 35px;
-}
-
-.detail-box h1 {
-  font-size: 34px;
-  margin: 12px 0;
-}
-
-.detail-box h2 {
-  font-size: 21px;
-  margin: 28px 0 10px;
-  color: #795B43;
-}
-
-.detail-box p,
-.detail-box li {
-  color: #94765B;
-  font-size: 16px;
-}
-
-.detail-box ul {
-  padding-left: 23px;
-}
-
-.evidence-box {
-  margin-top: 15px;
-  padding: 25px;
-  border: 1px dashed #a9bfd9;
-  border-radius: 10px;
-  background: #f8fafc;
-  color: #94765B;
-  text-align: center;
-}
-
-.evidence-box a {
-  color: #254c79;
-  font-weight: bold;
-}
-
-.evidence-image {
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
-  margin-top: 15px;
-}
-
-/* FOOTER */
-
-footer {
-  background: white;
-  border-top: 1px solid #E5D9CA;
-  padding: 25px 24px;
-  color: #94765B;
-}
-
-.footer-inner {
-  max-width: 1200px;
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
-  gap: 15px;
-  flex-wrap: wrap;
-}
-
-/* RESPONSIVE */
-
-@media (max-width: 700px) {
-  .header-inner {
-    flex-direction: column;
-  }
-
-  nav {
-    gap: 15px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .home-hero h1 {
-    font-size: 34px;
-  }
-
-  .home-hero p {
-    font-size: 16px;
-  }
-
-  .page-hero h1 {
-    font-size: 34px;
-  }
-
-  .card-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .card {
-    min-height: 210px;
-    padding: 22px;
-  }
-
-  .detail-box {
-    padding: 22px;
-  }
-
-  .detail-box h1 {
-    font-size: 27px;
-  }
-
-  .footer-inner {
-    flex-direction: column;
-  }
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio | Phạm Thu Trà</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Bổ sung: footer cân đối và chống tràn ngang */
+    html,
+    body {
+      max-width: 100%;
+      overflow-x: clip
+    }
+
+    .footer-inner {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 6px
+    }
+
+    .footer-inner span:last-child {
+      flex-basis: auto
+    }
+
+    @media(max-width:700px) {
+      .footer-inner {
+        padding: 24px 20px
+      }
+    }
+  </style>
+  <meta name="theme-color" content="#fffaf5">
+  <meta name="description"
+    content="Portfolio học tập của Phạm Thu Trà — sinh viên Sư phạm Âm nhạc, với định hướng trở thành giáo viên âm nhạc.">
 </head>
 
 <body>
 
-<!-- HEADER -->
+  <!-- HEADER -->
 
-<header>
-  <div class="header-inner">
+  <header>
+    <div class="header-inner">
 
-    <div class="logo" onclick="showView('home')">
-      MY PORTFOLIO.
-    </div>
+      <a class="logo" href="#home" style="text-decoration:none">
+        <svg viewBox="0 0 60 70" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+          stroke-linejoin="round" aria-hidden="true">
+          <path d="M22 49V17l27-7v32M22 25l27-7" />
+          <ellipse cx="14" cy="51" rx="8" ry="6" />
+          <ellipse cx="41" cy="44" rx="8" ry="6" />
+          <path d="M5 14v8M1 18h8" />
+        </svg><span>Thu Trà.</span>
+      </a>
 
-    <nav>
-      <button onclick="showView('home')">Trang chủ</button>
-      <button onclick="showView('aboutPage')">Giới thiệu</button>
-      <button onclick="showView('projectsPage')">Dự án</button>
-      <button onclick="goContact()">Liên hệ</button>
-    </nav>
-
-  </div>
-</header>
-
-
-<!-- TRANG CHỦ -->
-
-<main id="home" class="view">
-
-  <div class="home-hero">
-
-    <div class="eyebrow">
-      MUSIC EDUCATION PORTFOLIO
-    </div>
-
-    <h1>
-      Xin chào,<br>
-      mình là Phạm Thu Trà
-    </h1>
-    <img src="avatar.jpg" alt="Ảnh đại diện" style="width:180px;height:180px;object-fit:cover;border-radius:50%;margin:25px auto;display:block;border:5px solid #EEE5D9;">
-
-    <p>
-      Mình hiện đang theo học ngành Sư phạm Âm nhạc
-      tại Trường Đại học Sư phạm Nghệ thuật Trung ương.
-      Đây là không gian giới thiệu bản thân và lưu giữ
-      những sản phẩm trong quá trình học tập của mình.
-    </p>
-
-    <div class="hero-actions">
-
-      <button class="btn btn-primary"
-        onclick="showView('projectsPage')">
-        Khám phá dự án
-      </button>
-
-      <button class="btn btn-outline"
-        onclick="showView('aboutPage')">
-        Tìm hiểu về mình
-      </button>
+      <nav>
+        <a href="#home">Trang chủ</a>
+        <a href="#projectsPage">Dự án</a>
+        <a href="#conclusionPage">Tổng kết</a>
+      </nav>
 
     </div>
+  </header>
 
-  </div>
 
-  <div class="container">
+  <!-- TRANG CHỦ -->
 
-    <section class="content-section" id="contactHome">
+  <main id="home" class="view">
 
-      <h2>Liên hệ</h2>
-
-      <p class="section-description">
-        Cảm ơn bạn đã ghé thăm Portfolio của mình.
-      </p>
-
-      <p>Email: thutrapham206@gmail.com.</p>
-
+    <div class="home-hero">
+      <div class="hero-copy">
+        <h1><span class="greeting">Xin chào, em là</span><span>Phạm Thu Trà</span></h1>
+        <p>Một sinh viên Sư phạm Âm nhạc với mong muốn trở thành giáo viên âm nhạc, mang những giai điệu đến gần hơn với
+          các em nhỏ.</p>
+        <p style="margin-top:18px">Em đang học lớp <strong>K20D Sư phạm âm nhạc</strong> tại Trường Đại học Sư phạm Nghệ
+          thuật Trung ương.</p>
+        <p class="student-id">Mã số sinh viên: <strong>2552210213</strong></p>
+        <div class="hero-actions"><a class="btn btn-primary" href="#projectsPage">Ghé xem bài tập của em</a><a
+            class="btn btn-outline" href="#conclusionPage">Đọc trang tổng kết</a></div>
+      </div>
+      <figure class="portrait-scene">
+        <img class="profile-photo" src="/assets/logos/logo.jpg" alt="Phạm Thu Trà tại Cúc Phương" width="1546"
+          height="2562" fetchpriority="high">
+        <figcaption>Thu Trà · Một góc nhỏ của em</figcaption>
+        <span class="portrait-note">Âm nhạc & những ước mơ</span>
+        <span class="music-doodle"><svg viewBox="0 0 60 70" fill="none" stroke="currentColor" stroke-width="3"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M22 49V17l27-7v32M22 25l27-7" />
+            <ellipse cx="14" cy="51" rx="8" ry="6" />
+            <ellipse cx="41" cy="44" rx="8" ry="6" />
+            <path d="M5 14v8M1 18h8" />
+          </svg></span><span class="flower-doodle"><svg viewBox="0 0 80 80" fill="none" stroke="currentColor"
+            stroke-width="2" aria-hidden="true">
+            <path d="M40 28C13 1 7 31 28 40 1 67 31 73 40 52 67 79 73 49 52 40 79 13 49 7 40 28Z" fill="#f9e7b8" />
+            <circle cx="40" cy="40" r="8" fill="#eab3c7" />
+          </svg></span>
+      </figure>
+    </div>
+    <div class="music-divider" aria-hidden="true"><svg viewBox="0 0 1400 50" preserveAspectRatio="none" fill="none"
+        stroke="currentColor">
+        <path d="M0 12 Q350 40 700 12T1400 12M0 20 Q350 48 700 20T1400 20M0 28 Q350 56 700 28T1400 28" />
+      </svg></div>
+    <div class="container home-notes">
+      <section aria-labelledby="personal-goals">
+        <h2 class="note-heading" id="personal-goals"><svg viewBox="0 0 60 70" fill="none" stroke="currentColor"
+            stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M22 49V17l27-7v32M22 25l27-7" />
+            <ellipse cx="14" cy="51" rx="8" ry="6" />
+            <ellipse cx="41" cy="44" rx="8" ry="6" />
+            <path d="M5 14v8M1 18h8" />
+          </svg> Ước mơ đứng trên bục giảng</h2>
+        <p>Mục tiêu chính của em là trở thành giáo viên âm nhạc. Em hướng đến việc phát triển kiến thức âm nhạc và năng
+          lực sư phạm để phục vụ công việc giảng dạy.</p>
+        <p style="margin-top:16px">Bên cạnh định hướng giảng dạy, em có niềm yêu thích đặc biệt với ca hát và biểu diễn.
+          Em mong muốn hát tốt hơn mỗi ngày, cải thiện kỹ thuật thanh nhạc, cách xử lý bài hát và phong cách biểu diễn.
+        </p>
+        <p style="margin-top:16px">Em hướng đến sự tự tin khi đứng trên sân khấu, từ những phòng trà nhỏ đến các chương
+          trình âm nhạc lớn. Mỗi cơ hội biểu diễn, hát hợp xướng hay tham gia sự kiện đều là dịp em mong được trải
+          nghiệm và học hỏi để phát triển khả năng ca hát.</p>
+      </section>
+      <section class="portfolio-note">
+        <h2>Những điều em lưu giữ ở đây</h2>
+        <p>Portfolio là nơi giới thiệu bản thân, tóm tắt các sản phẩm của học phần <strong>Nhập môn Công nghệ số và ứng
+            dụng trí tuệ nhân tạo (INF2501)</strong>. Nội dung chi tiết và minh chứng của từng bài được lưu trong thư
+          mục Google Drive riêng, giúp việc truy cập, chia sẻ và nhìn lại quá trình học tập thuận tiện hơn.</p><a
+          href="#projectsPage" style="display:inline-block;margin-top:18px;font-weight:800">Mở cuốn sổ 6 bài tập</a>
+      </section>
+    </div>
+    <section class="music-playground" aria-labelledby="piano-title">
+      <div class="playground-inner">
+        <div>
+          <h2 id="piano-title">Một chút âm nhạc, nhé?</h2>
+          <p>Chạm vào một phím để nghe một nốt nhạc. Có thể dùng Tab và Enter để chơi bằng bàn phím.</p>
+          <p class="sound-status" id="soundStatus" aria-live="polite">Âm thanh chỉ phát khi bấm phím.</p>
+        </div>
+        <div class="piano" role="group" aria-label="Bàn phím bảy nốt nhạc"><button type="button" data-note="0"
+            aria-label="Phát nốt Đô">Đô</button><button type="button" data-note="1"
+            aria-label="Phát nốt Rê">Rê</button><button type="button" data-note="2"
+            aria-label="Phát nốt Mi">Mi</button><button type="button" data-note="3"
+            aria-label="Phát nốt Fa">Fa</button><button type="button" data-note="4"
+            aria-label="Phát nốt Sol">Sol</button><button type="button" data-note="5"
+            aria-label="Phát nốt La">La</button><button type="button" data-note="6" aria-label="Phát nốt Si">Si</button>
+        </div>
+      </div>
     </section>
 
-  </div>
-
-</main>
+  </main>
 
 
-<!-- TRANG TÌM HIỂU VỀ MÌNH -->
+  <!-- TRANG DANH SÁCH DỰ ÁN -->
 
-<main id="aboutPage" class="view" hidden>
+  <main id="projectsPage" class="view" hidden>
 
-  <div class="page-hero">
-    <div class="container">
+    <div class="page-hero">
+      <div class="container">
 
-      <div class="eyebrow">ABOUT ME</div>
 
-      <h1>Tìm hiểu về mình</h1>
+        <h1>Dự án học tập</h1>
 
-      <p>
-        Một vài thông tin về bản thân, quá trình học tập,
-        những kỹ năng và định hướng cá nhân.
+        <p>
+          Sáu bài tập thực hành thuộc học phần Nhập môn Công nghệ số và ứng dụng trí tuệ nhân tạo (INF2501).
+          Mỗi bài có một trang tóm tắt ý chính; bài làm đầy đủ và minh chứng được lưu trong thư mục Google Drive tương
+          ứng.
+        </p>
+
+        <div class="hero-actions" style="justify-content:flex-start">
+
+          <button class="btn btn-primary"
+            onclick="document.getElementById('projectList').scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'})">
+            Khám phá 6 bài tập
+          </button>
+
+          <button class="btn btn-outline" onclick="showView('home')">
+            Quay về Trang chủ
+          </button>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container content-section" id="projectList">
+
+      <h2>Danh sách bài tập</h2>
+      <nav class="project-menu" aria-label="Các trang bài tập">
+        <a href="#project/project1">Bài 1</a><a href="#project/project2">Bài 2</a>
+        <a href="#project/project3">Bài 3</a><a href="#project/project4">Bài 4</a>
+        <a href="#project/project5">Bài 5</a><a href="#project/project6">Bài 6</a>
+      </nav>
+
+      <p class="section-description">
+      Trang web tóm tắt mục tiêu, cách thực hiện và công cụ AI của từng bài. Thông tin tài liệu và liên kết Google Drive
+      được ghi tại trang chi tiết tương ứng.
       </p>
 
-      <button class="btn btn-outline"
-        style="margin-top:25px"
-        onclick="showView('home')">
-        ← Quay về trang chủ
+      <div class="card-grid">
+
+        <!-- BÀI TẬP 01 -->
+
+        <div class="card">
+          <div>
+            <h3>1. Quản lý tệp và thư mục</h3>
+            <p>
+              Thực hành quản lý tệp và thư mục trong Windows.
+            </p>
+          </div>
+
+          <div class="card-bottom">
+            <span class="status">Đã hoàn thành · Xem trên Drive</span>
+            <span style="display:flex;gap:14px;flex-wrap:wrap">
+              <a class="card-link" href="#project/project1">Mở bài tập</a>
+              <a class="card-link"
+                href="https://drive.google.com/drive/folders/1LOzTreFt2q7qQB5fv9ImRaQ5fzpZXybv?usp=drive_link"
+                target="_blank" rel="noopener noreferrer">Thư mục Drive</a>
+            </span>
+          </div>
+        </div>
+
+
+        <!-- BÀI TẬP 02 -->
+
+        <div class="card">
+          <div>
+            <h3>2. Tìm kiếm và đánh giá thông tin học thuật</h3>
+            <p>
+              Tìm kiếm và đánh giá tài liệu học thuật
+              theo chủ đề đã chọn.
+            </p>
+          </div>
+
+          <div class="card-bottom">
+            <span class="status">Đã hoàn thành · Xem trên Drive</span>
+            <span style="display:flex;gap:14px;flex-wrap:wrap">
+              <a class="card-link" href="#project/project2">Mở bài tập</a>
+              <a class="card-link"
+                href="https://drive.google.com/drive/folders/19iVEKzwp97CXdzxm-lZ9aIiHmEHYHcqH?usp=drive_link"
+                target="_blank" rel="noopener noreferrer">Thư mục Drive</a>
+            </span>
+          </div>
+        </div>
+
+
+        <!-- BÀI TẬP 03 -->
+
+        <div class="card">
+          <div>
+            <h3>3. Viết prompt hiệu quả cho các tác vụ học tập</h3>
+            <p>
+              So sánh prompt ban đầu, prompt cải tiến
+              và kết quả đầu ra của AI.
+            </p>
+          </div>
+
+          <div class="card-bottom">
+            <span class="status">Đã hoàn thành · Xem trên Drive</span>
+            <span style="display:flex;gap:14px;flex-wrap:wrap">
+              <a class="card-link" href="#project/project3">Mở bài tập</a>
+              <a class="card-link"
+                href="https://drive.google.com/drive/folders/1eXPzv-Kvhx14Wbjkl9huTBUDt1bhBTWO?usp=drive_link"
+                target="_blank" rel="noopener noreferrer">Thư mục Drive</a>
+            </span>
+          </div>
+        </div>
+
+
+        <!-- BÀI TẬP 04 -->
+
+        <div class="card">
+          <div>
+            <h3>4. Hợp tác và họp trực tuyến</h3>
+            <p>
+              Lên kế hoạch, tham gia họp nhóm trực tuyến
+              và tổng hợp kết quả.
+            </p>
+          </div>
+
+          <div class="card-bottom">
+            <span class="status">Chưa có báo cáo Word để xác minh</span>
+            <span style="display:flex;gap:14px;flex-wrap:wrap">
+              <a class="card-link" href="#project/project4">Mở bài tập</a>
+              <a class="card-link"
+                href="https://drive.google.com/drive/folders/1OdHh7ptvfiM9Hhg4quAKJjmKenzH-bNw?usp=drive_link"
+                target="_blank" rel="noopener noreferrer">Thư mục Drive</a>
+            </span>
+          </div>
+        </div>
+
+
+        <!-- BÀI TẬP 05 -->
+
+        <div class="card">
+          <div>
+            <h3>5. Sử dụng AI tạo sinh để sáng tạo nội dung</h3>
+            <p>
+              Dùng AI tạo sinh hỗ trợ làm một sản phẩm nội dung số
+              hoàn chỉnh.
+            </p>
+          </div>
+
+          <div class="card-bottom">
+            <span class="status">Đã hoàn thành · Xem trên Drive</span>
+            <span style="display:flex;gap:14px;flex-wrap:wrap">
+              <a class="card-link" href="#project/project5">Mở bài tập</a>
+              <a class="card-link"
+                href="https://drive.google.com/drive/folders/10PV3hB3678yT85s_EWwSzoiirZbZmSpm?usp=drive_link"
+                target="_blank" rel="noopener noreferrer">Thư mục Drive</a>
+            </span>
+          </div>
+        </div>
+
+
+        <!-- BÀI TẬP 06 -->
+
+        <div class="card">
+          <div>
+            <h3>6. Sử dụng AI có trách nhiệm trong học tập và nghiên cứu</h3>
+            <p>
+              Xây dựng bộ nguyên tắc cá nhân về sử dụng AI
+              có trách nhiệm.
+            </p>
+          </div>
+
+          <div class="card-bottom">
+            <span class="status">Đã hoàn thành · Xem trên Drive</span>
+            <span style="display:flex;gap:14px;flex-wrap:wrap">
+              <a class="card-link" href="#project/project6">Mở bài tập</a>
+              <a class="card-link"
+                href="https://drive.google.com/drive/folders/1aLHkIODfAMsgc6M_GjstbsRkxTi8nnL8?usp=drive_link"
+                target="_blank" rel="noopener noreferrer">Thư mục Drive</a>
+            </span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+
+  <!-- TRANG NỘI DUNG CHI TIẾT -->
+
+  <main id="detailPage" class="view" hidden>
+
+    <div class="container">
+
+      <button class="back-btn" onclick="goBack()">
+        Quay lại danh sách
       </button>
 
-    </div>
-  </div>
-
-  <div class="container content-section">
-
-    <h2>Đôi nét về bản thân</h2>
-
-    <p class="section-description">
-      Khám phá những khía cạnh khác nhau về mình.
-    </p>
-
-    <div class="card-grid">
-
-      <div class="card">
-        <div>
-          <div class="card-number">01. INTRODUCTION</div>
-          <h3>Giới thiệu bản thân</h3>
-          <p>Những thông tin cơ bản và đôi nét về con người mình.</p>
-        </div>
-        <div class="card-bottom">
-          <span class="status">Thông tin cá nhân</span>
-          <button class="card-link"
-            onclick="openDetail('about','intro')">
-            Tìm hiểu thêm →
-          </button>
-        </div>
-      </div>
-
-      <div class="card">
-        <div>
-          <div class="card-number">02. EDUCATION</div>
-          <h3>Quá trình học tập</h3>
-          <p>Những dấu mốc và trải nghiệm trong học tập.</p>
-        </div>
-        <div class="card-bottom">
-          <span class="status">Học vấn</span>
-          <button class="card-link"
-            onclick="openDetail('about','education')">
-            Tìm hiểu thêm →
-          </button>
-        </div>
-      </div>
-
-      <div class="card">
-        <div>
-          <div class="card-number">03. SKILLS</div>
-          <h3>Kỹ năng và năng lực</h3>
-          <p>Những kỹ năng mình đã và đang rèn luyện.</p>
-        </div>
-        <div class="card-bottom">
-          <span class="status">Năng lực</span>
-          <button class="card-link"
-            onclick="openDetail('about','skills')">
-            Tìm hiểu thêm →
-          </button>
-        </div>
-      </div>
-
-      <div class="card">
-        <div>
-          <div class="card-number">04. INTERESTS</div>
-          <h3>Sở thích và định hướng</h3>
-          <p>Những điều mình quan tâm và mục tiêu tương lai.</p>
-        </div>
-        <div class="card-bottom">
-          <span class="status">Định hướng</span>
-          <button class="card-link"
-            onclick="openDetail('about','interests')">
-            Tìm hiểu thêm →
-          </button>
-        </div>
+      <div class="detail-box" id="detailContent">
       </div>
 
     </div>
-  </div>
 
-</main>
+  </main>
 
 
-<!-- TRANG DANH SÁCH DỰ ÁN -->
-
-<main id="projectsPage" class="view" hidden>
-
-  <div class="page-hero">
+  <main id="conclusionPage" class="view" hidden>
+    <div class="page-hero">
+      <div class="container">
+        <h1>Tổng kết Portfolio</h1>
+        <p>Nhìn lại quá trình học tập và định hướng trở thành giáo viên âm nhạc.</p>
+      </div>
+    </div>
     <div class="container">
-
-      <div class="eyebrow">
-        DIGITAL TECHNOLOGY · PROJECTS
+      <div class="detail-box">
+        <section class="reflection-section">
+          <h2>Trải nghiệm và cảm nhận cá nhân</h2>
+          <p>Sau quá trình học tập học phần Nhập môn Công nghệ số và ứng dụng trí tuệ nhân tạo (INF2501), em cảm thấy đã
+            học được nhiều kiến thức và kỹ năng mới. Điều khiến em tâm đắc nhất là có cơ hội tiếp xúc và tìm hiểu những
+            điều trước đây em chưa từng biết đến. Portfolio này giúp em lưu giữ các sản phẩm học tập và nhìn lại những
+            điều đã học được.</p>
+        </section>
+        <section class="reflection-section">
+          <h2>Kiến thức và kỹ năng đã tiếp thu</h2>
+          <p>Em đã biết cách sử dụng AI để hỗ trợ các tác vụ học tập, tìm kiếm thông tin trên web và sử dụng GitHub. Bên
+            cạnh đó, em còn được làm quen với một số ngôn ngữ lập trình. Dù đây vẫn là những bước đầu, các kiến thức này
+            đã giúp em có thêm kỹ năng sử dụng công nghệ trong học tập.</p>
+        </section>
+        <section class="reflection-section">
+          <h2>Điều tâm đắc, khó khăn và cách khắc phục</h2>
+          <p>Điều em trân trọng nhất là cơ hội được học thêm nhiều điều mới ngoài lĩnh vực âm nhạc. Tuy nhiên, việc tìm
+            hiểu và làm quen với các ngôn ngữ lập trình cũng là một thử thách, bởi nhiều kiến thức còn mới và khá khó
+            hiểu đối với em.</p>
+          <p style="margin-top:16px">Để khắc phục, em đã cố gắng dành thêm thời gian học lại, ôn tập và thực hành nhiều
+            hơn. Việc chủ động xem lại những phần chưa hiểu và luyện tập giúp em hiểu bài, ghi nhớ kiến thức tốt hơn.
+          </p>
+        </section>
+        <section class="reflection-section">
+          <h2>Định hướng phát triển</h2>
+          <p>Mục tiêu chính của em vẫn là trở thành giáo viên âm nhạc. Song song với việc học kiến thức chuyên môn và
+            rèn luyện năng lực sư phạm, em muốn tiếp tục nuôi dưỡng niềm yêu thích ca hát và biểu diễn.</p>
+          <p style="margin-top:16px">Em mong muốn cải thiện kỹ thuật thanh nhạc, cách xử lý bài hát và phong cách biểu
+            diễn để tự tin hơn khi đứng trên sân khấu. Từ những phòng trà nhỏ đến các chương trình âm nhạc lớn, em hy
+            vọng có thêm cơ hội được biểu diễn, trải nghiệm và học hỏi để phát triển khả năng ca hát của bản thân.</p>
+        </section>
+        <section class="reflection-section">
+          <h2>Các bài tập trong Portfolio</h2>
+          <p>Trang web tóm tắt sáu bài tập; thông tin tài liệu và liên kết Google Drive được ghi tại từng bài. Bài 4
+            chưa có báo cáo Word để đối chiếu.</p>
+          <ul>
+            <li><a href="#project/project1">Bài 1: Thao tác cơ bản với tệp tin và thư mục</a> · <a
+                href="https://drive.google.com/drive/folders/1LOzTreFt2q7qQB5fv9ImRaQ5fzpZXybv?usp=drive_link"
+                target="_blank" rel="noopener noreferrer">Drive</a></li>
+            <li><a href="#project/project2">Bài 2: Tìm kiếm và đánh giá thông tin học thuật</a> · <a
+                href="https://drive.google.com/drive/folders/19iVEKzwp97CXdzxm-lZ9aIiHmEHYHcqH?usp=drive_link"
+                target="_blank" rel="noopener noreferrer">Drive</a></li>
+            <li><a href="#project/project3">Bài 3: Viết prompt hiệu quả cho các tác vụ học tập</a> · <a
+                href="https://drive.google.com/drive/folders/1eXPzv-Kvhx14Wbjkl9huTBUDt1bhBTWO?usp=drive_link"
+                target="_blank" rel="noopener noreferrer">Drive</a></li>
+            <li><a href="#project/project4">Bài 4: Sử dụng công cụ hợp tác trực tuyến cho dự án nhóm</a> · <a
+                href="https://drive.google.com/drive/folders/1OdHh7ptvfiM9Hhg4quAKJjmKenzH-bNw?usp=drive_link"
+                target="_blank" rel="noopener noreferrer">Drive</a></li>
+            <li><a href="#project/project5">Bài 5: Sử dụng AI tạo sinh để sáng tạo nội dung</a> · <a
+                href="https://drive.google.com/drive/folders/10PV3hB3678yT85s_EWwSzoiirZbZmSpm?usp=drive_link"
+                target="_blank" rel="noopener noreferrer">Drive</a></li>
+            <li><a href="#project/project6">Bài 6: Sử dụng AI có trách nhiệm trong học tập và nghiên cứu</a> · <a
+                href="https://drive.google.com/drive/folders/1aLHkIODfAMsgc6M_GjstbsRkxTi8nnL8?usp=drive_link"
+                target="_blank" rel="noopener noreferrer">Drive</a></li>
+          </ul>
+        </section>
+        <section class="ai-credits" aria-labelledby="ai-credits-title">
+          <h2 id="ai-credits-title">AI hỗ trợ trong quá trình học tập</h2>
+          <p>Em sử dụng AI để hỗ trợ một số bài tập và quá trình xây dựng Portfolio. Công cụ và mục đích sử dụng ở từng
+            bài được ghi trong trang bài tập tương ứng.</p>
+          <div class="ai-tools">
+            <article class="ai-tool">
+              <a class="ai-tool-brand" href="https://chatgpt.com/" target="_blank" rel="noopener noreferrer"
+                aria-label="ChatGPT — mở website trong tab mới">
+                <span class="ai-logo"><img src="assets/logos/chatgpt.svg" alt="" width="40" height="40"
+                    loading="lazy"></span>
+                <h3>ChatGPT</h3>
+              </a>
+            </article>
+            <article class="ai-tool">
+              <a class="ai-tool-brand" href="https://www.canva.com/" target="_blank" rel="noopener noreferrer"
+                aria-label="Canva AI — mở website trong tab mới">
+                <span class="ai-logo"><img src="assets/logos/canva.svg" alt="" width="40" height="40"
+                    loading="lazy"></span>
+                <h3>Canva AI</h3>
+              </a>
+            </article>
+          </div>
+          <p class="ai-source-note">Nguồn tư liệu của từng bài được ghi trong thư mục Drive tương ứng. Biểu tượng từ <a
+              href="https://github.com/lobehub/lobe-icons" target="_blank" rel="noopener noreferrer">Lobe Icons</a>.</p>
+        </section>
       </div>
-
-      <h1>Dự án học tập</h1>
-
-      <p>
-        Sáu bài tập thực hành thuộc học phần Công nghệ số.
-        Mỗi bài tập có một trang riêng để trình bày mục tiêu,
-        quá trình thực hiện và minh chứng.
-      </p>
-
-      <div class="hero-actions"
-        style="justify-content:flex-start">
-
-        <button class="btn btn-primary"
-          onclick="document.getElementById('projectList').scrollIntoView({behavior:'smooth'})">
-          Khám phá 6 bài tập
-        </button>
-
-        <button class="btn btn-outline"
-          onclick="showView('home')">
-          Quay về Trang chủ
-        </button>
-
-      </div>
-
     </div>
-  </div>
+  </main>
 
-  <div class="container content-section" id="projectList">
+  <!-- FOOTER -->
 
-    <h2>Danh sách bài tập</h2>
-
-    <p class="section-description">
-      Mỗi bài tập có một trang riêng để bổ sung quá trình
-      thực hiện, báo cáo và minh chứng. Các trạng thái sẽ
-      được cập nhật theo kết quả thực tế.
-    </p>
-
-    <div class="card-grid">
-
-      <!-- BÀI TẬP 01 -->
-
-      <div class="card">
-        <div>
-          <div class="card-number">BÀI TẬP 01</div>
-          <h3>Quản lý tệp và thư mục</h3>
-          <p>
-            Thực hành quản lý tệp và thư mục trong Windows,
-            kèm ảnh minh chứng.
-          </p>
-        </div>
-
-        <div class="card-bottom">
-          <span class="status">Đã cập nhật minh chứng</span>
-          <button class="card-link"
-            onclick="openDetail('project','project1')">
-            Xem trang bài tập →
-          </button>
-        </div>
-      </div>
-
-
-      <!-- BÀI TẬP 02 -->
-
-      <div class="card">
-        <div>
-          <div class="card-number">BÀI TẬP 02</div>
-          <h3>Tìm kiếm tài liệu học thuật</h3>
-          <p>
-            Tìm kiếm và đánh giá tài liệu học thuật
-            theo chủ đề đã chọn.
-          </p>
-        </div>
-
-        <div class="card-bottom">
-          <span class="status">Đã cập nhật minh chứng</span>
-          <button class="card-link"
-            onclick="openDetail('project','project2')">
-            Xem trang bài tập →
-          </button>
-        </div>
-      </div>
-
-
-      <!-- BÀI TẬP 03 -->
-
-      <div class="card">
-        <div>
-          <div class="card-number">BÀI TẬP 03</div>
-          <h3>Kỹ năng viết Prompt và sử dụng AI</h3>
-          <p>
-            Thử nghiệm chín prompt cho ba nhiệm vụ học tập
-            và so sánh kết quả.
-          </p>
-        </div>
-
-        <div class="card-bottom">
-          <span class="status">Đã cập nhật minh chứng</span>
-          <button class="card-link"
-            onclick="openDetail('project','project3')">
-            Xem trang bài tập →
-          </button>
-        </div>
-      </div>
-
-
-      <!-- BÀI TẬP 04 -->
-
-      <div class="card">
-        <div>
-          <div class="card-number">BÀI TẬP 04</div>
-          <h3>Hợp tác và họp trực tuyến</h3>
-          <p>
-            Lên kế hoạch, tham gia họp nhóm trực tuyến
-            và tổng hợp kết quả.
-          </p>
-        </div>
-
-        <div class="card-bottom">
-          <span class="status">Chưa cập nhật minh chứng</span>
-          <button class="card-link"
-            onclick="openDetail('project','project4')">
-            Xem trang bài tập →
-          </button>
-        </div>
-      </div>
-
-
-      <!-- BÀI TẬP 05 -->
-
-      <div class="card">
-        <div>
-          <div class="card-number">BÀI TẬP 05</div>
-          <h3>Sử dụng AI tạo sinh để sáng tạo nội dung</h3>
-          <p>
-            Nội dung sẽ bổ sung sau khi đối chiếu
-            yêu cầu cụ thể của giảng viên.
-          </p>
-        </div>
-
-        <div class="card-bottom">
-          <span class="status">Chưa cập nhật minh chứng</span>
-          <button class="card-link"
-            onclick="openDetail('project','project5')">
-            Xem trang bài tập →
-          </button>
-        </div>
-      </div>
-
-
-      <!-- BÀI TẬP 06 -->
-
-      <div class="card">
-        <div>
-          <div class="card-number">BÀI TẬP 06</div>
-          <h3>Sử dụng AI có trách nhiệm trong học tập và nghiên cứu</h3>
-          <p>
-            Nội dung sẽ bổ sung sau khi đối chiếu
-            yêu cầu cụ thể của giảng viên.
-          </p>
-        </div>
-
-        <div class="card-bottom">
-          <span class="status">Chưa cập nhật minh chứng</span>
-          <button class="card-link"
-            onclick="openDetail('project','project6')">
-            Xem trang bài tập →
-          </button>
-        </div>
-      </div>
-
+  <footer>
+    <div class="footer-inner">
+      <span>© 2026 Phạm Thu Trà · Portfolio học tập</span>
+      <span>MSSV: 2552210213 · Lớp: K20D Sư phạm âm nhạc</span>
+      <span>Học phần: Nhập môn Công nghệ số và ứng dụng trí tuệ nhân tạo · INF2501</span>
     </div>
-  </div>
-
-</main>
+  </footer>
 
 
-<!-- TRANG NỘI DUNG CHI TIẾT -->
+  <!-- JAVASCRIPT -->
 
-<main id="detailPage" class="view" hidden>
+  <script>
 
-  <div class="container">
+    // CHUYỂN GIỮA CÁC TRANG
 
-    <button class="back-btn" onclick="goBack()">
-      ← Quay lại danh sách
-    </button>
+    let previousPage = 'home';
+    let initialPageLoad = true;
 
-    <div class="detail-box" id="detailContent">
-    </div>
+    function showView(id) {
 
-  </div>
+      if (!document.getElementById(id)?.classList.contains('view')) return;
+      if (id !== 'detailPage' && location.hash !== '#' + id) location.hash = id;
 
-</main>
+      document.querySelectorAll('.view').forEach(view => {
+        view.hidden = true;
+      });
 
+      document.getElementById(id).hidden = false;
 
-<!-- FOOTER -->
+      window.scrollTo({
+        top: 0,
+        behavior: 'instant'
+      });
 
-<footer>
-  <div class="footer-inner">
-    <span>© 2026 Phạm Thu Trà · Portfolio học tập</span>
-    <span>Sư phạm Âm nhạc</span>
-  </div>
-</footer>
+      document.querySelectorAll('header nav a').forEach(link => {
+        const activePage = id === 'detailPage' ? previousPage : id;
+        if (link.getAttribute('href') === '#' + activePage) link.setAttribute('aria-current', 'page');
+        else link.removeAttribute('aria-current');
+      });
+      const heading = document.querySelector('#' + id + ' h1');
+      if (heading) {
+        heading.tabIndex = -1;
+        if (!initialPageLoad) heading.focus({ preventScroll: true });
+        document.title = heading.textContent.trim() + ' | Phạm Thu Trà';
+      }
 
-
-<!-- JAVASCRIPT -->
-
-<script>
-
-// CHUYỂN GIỮA CÁC TRANG
-
-let previousPage = 'home';
-
-function showView(id) {
-
-  document.querySelectorAll('.view').forEach(view => {
-    view.hidden = true;
-  });
-
-  document.getElementById(id).hidden = false;
-
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth'
-  });
-
-}
+    }
 
 
-// MỞ TRANG CHI TIẾT
+    // MỞ TRANG CHI TIẾT
 
-function openDetail(type, id) {
+    function openDetail(type, id) {
 
-  previousPage = type === 'project'
-    ? 'projectsPage'
-    : 'aboutPage';
+      if (type !== 'project' || !Object.hasOwn(projectDetails, id)) return;
+      previousPage = 'projectsPage';
+      const data = projectDetails[id];
+      const route = type + '/' + id;
+      if (location.hash !== '#' + route) location.hash = route;
 
-  let data = type === 'project'
-    ? projectDetails[id]
-    : aboutDetails[id];
+      const requirements = data.requirements.map(item => `<li>${item}</li>`).join('');
+      let n = 0;
+      const h = title => `<h2>${++n}. ${title}</h2>`;
 
-  if (!data) return;
-
-  let content = `
-    <div class="eyebrow">${data.label}</div>
+      let content = `
+    <p>${data.label}</p>
 
     <h1>${data.title}</h1>
 
-    <p>${data.description}</p>
-
-    <h2>1. Mục tiêu</h2>
+    ${h('Mục tiêu và yêu cầu')}
     <p>${data.objective}</p>
+    <ul>${requirements}</ul>
 
-    <h2>2. Nội dung thực hiện</h2>
-    <p>${data.process}</p>
+    ${h('Thực hiện ngắn gọn')}
+    <p>${data.execution}</p>
+  `;
 
-    <h2>3. Kết quả</h2>
-    <p>${data.result}</p>
+      const aiContent = data.aiTools
+        ? `<div class="assignment-ai-list">${data.aiTools.map(tool => `
+            <div class="assignment-ai-item">
+              <img src="${AI_TOOLS[tool.id].logo}" alt="" width="40" height="40" loading="lazy">
+              <div><strong>${AI_TOOLS[tool.id].name}</strong><p>${tool.purpose}</p></div>
+            </div>`).join('')}</div>`
+        : `<p>${data.ai}</p>`;
 
-    <h2>4. Hình ảnh và tài liệu minh chứng</h2>
+      content += `
+    ${h('Công cụ AI sử dụng')}
+    ${aiContent}
+    ${data.aiNote ? `<p class="assignment-ai-note">${data.aiNote}</p>` : ''}
+
+    ${h('Drive và thông tin')}
 
     <div class="evidence-box">
-      <p>
-        ${data.evidence}
+      <p>${data.driveInfo}</p>
+      <p style="margin-top:16px">
+        <a class="btn btn-primary" href="${data.driveUrl}" target="_blank" rel="noopener noreferrer">${data.driveLinkLabel}</a>
       </p>
     </div>
   `;
 
-  document.getElementById('detailContent').innerHTML = content;
+      const next = Number(id.replace('project', '')) + 1;
+      content += `<div class="project-menu"><a href="#projectsPage">Danh sách dự án</a>${next <= 6 ? `<a href="#project/project${next}">Bài tập tiếp theo</a>` : '<a href="#conclusionPage">Trang Tổng kết</a>'}</div>`;
+      document.getElementById('detailContent').innerHTML = content;
 
-  showView('detailPage');
+      showView('detailPage');
 
-}
-
-
-// QUAY LẠI TRANG TRƯỚC
-
-function goBack() {
-  showView(previousPage);
-}
+    }
 
 
-// ĐI ĐẾN LIÊN HỆ
+    // QUAY LẠI TRANG TRƯỚC
 
-function goContact() {
-
-  showView('home');
-
-  setTimeout(() => {
-    document.getElementById('contactHome')
-      .scrollIntoView({behavior:'smooth'});
-  }, 100);
-
-}
+    function goBack() {
+      showView(previousPage);
+    }
 
 
-// DỮ LIỆU CÁC BÀI TẬP
+    // DỮ LIỆU CÁC BÀI TẬP
+    const AI_TOOLS = {
+      chatgpt: { name: "ChatGPT", logo: "assets/logos/chatgpt.svg" },
+      canva: { name: "Canva AI", logo: "assets/logos/canva.svg" }
+    };
 
-const projectDetails = {
+    const projectDetails = {
+      "project1": {
+        "label": "Bài 1 · Chương 1",
+        "title": "Thao tác cơ bản với tệp tin và thư mục",
+        "objective": "Rèn luyện kỹ năng quản lý tệp, thư mục trên Windows.",
+        "requirements": [
+          "Tạo và đổi tên thư mục, tệp văn bản.",
+          "Thực hành sao chép, di chuyển, xóa và khôi phục tệp.",
+          "Ghi lại các thao tác để làm minh chứng."
+        ],
+        "execution": "Mở File Explorer, tạo thư mục CNS_PhamThuTra, tệp văn bản và thư mục con GiaoTrinh; thực hành Copy/Paste, Cut/Paste, Delete, Shift + Delete và khôi phục từ Recycle Bin. Các thao tác được mô tả trong báo cáo.",
+        "ai": "Không ghi nhận sử dụng công cụ AI trong báo cáo thực hành. Các thao tác được thực hiện bằng File Explorer.",
+        "driveInfo": "Tài liệu đối chiếu: BÀI TẬP 1.docx.",
+        "driveLinkLabel": "Xem bài làm trên Google Drive",
+        "driveUrl": "https://drive.google.com/drive/folders/1LOzTreFt2q7qQB5fv9ImRaQ5fzpZXybv?usp=drive_link"
+      },
+      "project2": {
+        "label": "Bài 2 · Chương 2",
+        "title": "Tìm kiếm và đánh giá thông tin học thuật",
+        "objective": "Khảo sát ứng dụng AI trong giáo dục âm nhạc và đánh giá biểu diễn piano.",
+        "requirements": [
+          "Sử dụng Google Scholar và các toán tử tìm kiếm nâng cao.",
+          "Tổng hợp ít nhất 10 tài liệu, gồm ít nhất 5 bài báo khoa học.",
+          "Đánh giá nguồn theo tác giả, xuất bản, phương pháp, trích dẫn và độ cập nhật."
+        ],
+        "execution": "Tìm tài liệu qua Google Scholar và Google Search, thử 9 truy vấn, chọn 11 nguồn (8 bài báo khoa học), lập bảng đánh giá và danh mục tham khảo. Đối chiếu thông tin tại nơi công bố gốc.",
+        "aiTools": [
+          { "id": "chatgpt", "purpose": "Gợi ý từ khóa, hệ thống hóa báo cáo, tổ chức bảng so sánh và hỗ trợ đối chiếu thông tin thư mục." }
+        ],
+        "aiNote": "Google Scholar và Google Search là công cụ tìm kiếm, không được tính là AI tạo sinh sử dụng trong bài.",
+        "driveInfo": "Tài liệu đối chiếu: Bao_cao_Bai_2_Tim_kiem_va_danh_gia_thong_tin_hoc_thuat.docx.",
+        "driveLinkLabel": "Xem bài làm trên Google Drive",
+        "driveUrl": "https://drive.google.com/drive/folders/19iVEKzwp97CXdzxm-lZ9aIiHmEHYHcqH?usp=drive_link"
+      },
+      "project3": {
+        "label": "Bài 3 · Chương 3",
+        "title": "Viết prompt hiệu quả cho các tác vụ học tập",
+        "objective": "Rèn luyện cách đặt yêu cầu để AI hỗ trợ học tập rõ ràng và phù hợp.",
+        "requirements": [
+          "Chọn ba tác vụ: tóm tắt, giải thích khái niệm và tạo câu hỏi.",
+          "Viết prompt ở ba mức: cơ bản, cải tiến, nâng cao.",
+          "Thử nghiệm và so sánh chất lượng câu trả lời."
+        ],
+        "execution": "Thử prompt cho ba chủ đề: Joseph Haydn, Hòa âm, Quãng và Hợp âm. So sánh cách diễn đạt, vai trò, bối cảnh, cấu trúc và tiêu chí chất lượng; tổng hợp ưu và nhược điểm.",
+        "aiTools": [
+          { "id": "chatgpt", "purpose": "Thử nghiệm các prompt." }
+        ],
+        "driveInfo": "Tài liệu đối chiếu: BÀI TẬP 3 - Viết prompt hiệu quả cho các tác vụ học tập.docx.",
+        "driveLinkLabel": "Xem bài làm trên Google Drive",
+        "driveUrl": "https://drive.google.com/drive/folders/1eXPzv-Kvhx14Wbjkl9huTBUDt1bhBTWO?usp=drive_link"
+      },
+      "project4": {
+        "label": "Bài 4 · Chương 4",
+        "title": "Sử dụng công cụ hợp tác trực tuyến cho dự án nhóm",
+        "objective": "Phát triển kỹ năng phối hợp nhóm và tổ chức cuộc họp trực tuyến.",
+        "requirements": [
+          "Chọn chủ đề học tập, phân công vai trò và chuẩn bị nghị sự.",
+          "Tổ chức cuộc họp bằng nền tảng phù hợp.",
+          "Tổng hợp kết luận và nhiệm vụ sau buổi họp."
+        ],
+        "execution": "Theo mô tả của website cũ: xây dựng kế hoạch họp, lựa chọn nền tảng, họp nhóm khoảng 20–30 phút và lập biên bản. Chưa có báo cáo Bài 4 để đối chiếu việc thực hiện thực tế.",
+        "aiTools": [
+          { "id": "chatgpt", "purpose": "Tạo kế hoạch bài giảng môn Âm nhạc cho học sinh lớp 6 với chủ đề “Sắc màu âm thanh Việt Nam”." }
+        ],
+        "driveInfo": "Liên kết thư mục được giữ lại từ website cũ; hiện chưa có file báo cáo Bài 4 để kiểm tra.",
+        "driveLinkLabel": "Mở thư mục Google Drive",
+        "driveUrl": "https://drive.google.com/drive/folders/1OdHh7ptvfiM9Hhg4quAKJjmKenzH-bNw?usp=drive_link"
+      },
+      "project5": {
+        "label": "Bài 5 · Chương 5",
+        "title": "Sử dụng AI tạo sinh để sáng tạo nội dung",
+        "objective": "Ứng dụng AI tạo sinh để xây dựng nội dung số gắn với ngành Âm nhạc.",
+        "requirements": [
+          "Thiết kế infographic “30 phút luyện tập piano cho người mới bắt đầu”.",
+          "Có bố cục rõ, bốn giai đoạn và tổng thời gian 30 phút.",
+          "Ghi rõ công cụ AI, mục đích sử dụng và quá trình điều chỉnh."
+        ],
+        "execution": "Xây dựng nội dung bốn bước 5 – 8 – 12 – 5 phút, soạn prompt, tạo infographic bằng Canva AI, kiểm tra chữ và bố cục rồi yêu cầu chỉnh sửa phần tổng kết. Lưu bản hoàn thiện trong Drive.",
+        "aiTools": [
+          { "id": "chatgpt", "purpose": "Gợi ý nội dung, xây dựng prompt và rà soát." },
+          { "id": "canva", "purpose": "Tạo infographic và điều chỉnh bố cục theo yêu cầu." }
+        ],
+        "driveInfo": "Tài liệu đối chiếu: Bao_cao_Bai_5_Infographic_Piano_Canva_AI.docx. Ảnh và minh chứng chỉ truy cập trong Drive, không tải trực tiếp ở đây.",
+        "driveLinkLabel": "Xem bài làm trên Google Drive",
+        "driveUrl": "https://drive.google.com/drive/folders/10PV3hB3678yT85s_EWwSzoiirZbZmSpm?usp=drive_link"
+      },
+      "project6": {
+        "label": "Bài 6 · Chương 6",
+        "title": "Sử dụng AI có trách nhiệm trong học tập và nghiên cứu",
+        "objective": "Tìm hiểu nguyên tắc sử dụng AI an toàn, trung thực và trách nhiệm.",
+        "requirements": [
+          "Đối chiếu hướng dẫn chính thức từ Oxford, VinUniversity và UEH.",
+          "Xây dựng sáu nguyên tắc cá nhân áp dụng cho học tập Âm nhạc.",
+          "Nêu rõ tài liệu làm cơ sở và trách nhiệm kiểm chứng."
+        ],
+        "execution": "Đọc chính sách của ba trường, lập bảng so sánh và đề xuất sáu nguyên tắc: đúng phạm vi, công khai AI, kiểm chứng, tư duy độc lập, bảo mật/bản quyền và chịu trách nhiệm cuối cùng.",
+        "aiTools": [
+          { "id": "chatgpt", "purpose": "Hệ thống hóa thông tin chính sách, lập bảng so sánh và biên tập báo cáo." }
+        ],
+        "aiNote": "Nội dung chính sách được đối chiếu với nguồn chính thức của ba trường.",
+        "driveInfo": "Tài liệu làm cơ sở và bài làm được lưu trong thư mục Google Drive.",
+        "driveLinkLabel": "Xem bài làm trên Google Drive",
+        "driveUrl": "https://drive.google.com/drive/folders/1aLHkIODfAMsgc6M_GjstbsRkxTi8nnL8?usp=drive_link"
+      }
+    };
 
-  project1: {
-    label: 'BÀI TẬP 01',
-    title: 'Quản lý tệp và thư mục',
-    description: 'Thực hành quản lý tệp và thư mục trong Windows.',
-    objective: 'Bổ sung mục tiêu theo yêu cầu cụ thể của bài tập.',
-    process: 'Trình bày các bước tạo, sắp xếp, đổi tên, sao chép hoặc quản lý tệp và thư mục đã thực hiện.',
-    result: 'Bổ sung kết quả thực tế sau khi hoàn thành bài tập.',
-    evidence: ''
-  },
 
-  project2: {
-    label: 'BÀI TẬP 02',
-    title: 'Tìm kiếm tài liệu học thuật',
-    description: 'Tìm kiếm và đánh giá tài liệu học thuật theo chủ đề đã chọn.',
-    objective: 'Bổ sung mục tiêu của nhiệm vụ tìm kiếm tài liệu.',
-    process: 'Trình bày từ khóa, công cụ tìm kiếm, nguồn tài liệu và cách đánh giá độ tin cậy.',
-    result: 'Bổ sung danh sách tài liệu đã tìm được và nhận xét.',
-    evidence: ''
-  },
-
-  project3: {
-    label: 'BÀI TẬP 03',
-    title: 'Kỹ năng viết Prompt và sử dụng AI',
-    description: 'Thử nghiệm chín prompt cho ba nhiệm vụ học tập và so sánh kết quả.',
-    objective: 'Bổ sung mục tiêu sử dụng AI trong các nhiệm vụ học tập.',
-    process: 'Trình bày các prompt đã viết, kết quả nhận được và cách điều chỉnh yêu cầu.',
-    result: 'So sánh, đánh giá kết quả và rút ra nhận xét.',
-    evidence: 'Bổ sung ảnh chụp các prompt và kết quả thực hiện.'
-  },
-
-  project4: {
-    label: 'BÀI TẬP 04',
-    title: 'Hợp tác và họp trực tuyến',
-    description: 'Lên kế hoạch, tham gia họp nhóm trực tuyến và tổng hợp kết quả.',
-    objective: 'Bổ sung mục tiêu của hoạt động làm việc nhóm.',
-    process: 'Trình bày quá trình lên kế hoạch, trao đổi và phân công nhiệm vụ.',
-    result: 'Bổ sung kết quả làm việc nhóm.',
-    evidence: 'Bổ sung hình ảnh cuộc họp và sản phẩm tổng hợp.'
-  },
-
-  project5: {
-    label: 'BÀI TẬP 05',
-    title: 'Bài tập thực hành số 5',
-    description: 'Nội dung sẽ được cập nhật sau.',
-    objective: 'Bổ sung sau khi có yêu cầu của giảng viên.',
-    process: 'Bổ sung các bước thực hiện.',
-    result: 'Bổ sung kết quả thực tế.',
-    evidence: 'Chưa cập nhật minh chứng.'
-  },
-
-  project6: {
-    label: 'BÀI TẬP 06',
-    title: 'Bài tập thực hành số 6',
-    description: 'Nội dung sẽ được cập nhật sau.',
-    objective: 'Bổ sung sau khi có yêu cầu của giảng viên.',
-    process: 'Bổ sung các bước thực hiện.',
-    result: 'Bổ sung kết quả thực tế.',
-    evidence: 'Chưa cập nhật minh chứng.'
-  }
-
-};
+    function renderRoute() {
+      const route = location.hash.slice(1) || 'home';
+      const [type, id] = route.split('/');
+      if (type === 'project' && Object.hasOwn(projectDetails, id)) {
+        openDetail(type, id);
+      } else if (['home', 'projectsPage', 'conclusionPage'].includes(route)) {
+        showView(route);
+      } else {
+        history.replaceState(null, '', '#home');
+        showView('home');
+      }
+    }
+    window.addEventListener('hashchange', renderRoute);
+    renderRoute();
+    initialPageLoad = false;
 
 
-// DỮ LIỆU GIỚI THIỆU BẢN THÂN
+    let audioContext;
+    const noteNames = ['Đô', 'Rê', 'Mi', 'Fa', 'Sol', 'La', 'Si'];
+    const noteFrequencies = [261.63, 293.66, 329.63, 349.23, 392, 440, 493.88];
+    document.querySelectorAll('[data-note]').forEach(button => {
+      button.addEventListener('click', async () => {
+        const status = document.getElementById('soundStatus');
+        try {
+          const AudioEngine = window.AudioContext || window.webkitAudioContext;
+          if (!AudioEngine) throw new Error('Audio unavailable');
+          audioContext ||= new AudioEngine();
+          if (audioContext.state === 'suspended') await audioContext.resume();
+          const index = Number(button.dataset.note);
+          const oscillator = audioContext.createOscillator();
+          const volume = audioContext.createGain();
+          const now = audioContext.currentTime;
+          oscillator.type = 'sine';
+          oscillator.frequency.value = noteFrequencies[index];
+          volume.gain.setValueAtTime(0, now);
+          volume.gain.linearRampToValueAtTime(0.12, now + 0.02);
+          volume.gain.exponentialRampToValueAtTime(0.001, now + 0.7);
+          oscillator.connect(volume); volume.connect(audioContext.destination);
+          oscillator.start(now); oscillator.stop(now + 0.72);
+          oscillator.onended = () => { oscillator.disconnect(); volume.disconnect(); };
+          status.textContent = 'Nốt ' + noteNames[index] + ' — một giai điệu bắt đầu từ đây.';
+          button.classList.add('playing');
+          setTimeout(() => button.classList.remove('playing'), 180);
+        } catch {
+          status.textContent = 'Chưa phát được âm thanh. Hãy thử lại bằng trình duyệt hỗ trợ âm thanh.';
+        }
+      });
+    });
 
-const aboutDetails = {
-
-  intro: {
-    label: 'ABOUT ME',
-    title: 'Giới thiệu bản thân',
-    description: 'Xin chào, mình là Phạm Thu Trà, sinh viên ngành Sư phạm Âm nhạc tại Trường Đại học Sư phạm Nghệ thuật Trung ương.',
-    objective: 'Mình yêu thích âm nhạc và quan tâm đến những hoạt động sáng tạo, chia sẻ âm nhạc.',
-    process: 'Mình có cơ hội tìm hiểu nhạc cụ, tham gia các hoạt động âm nhạc và trải nghiệm việc đồng hành cùng các em nhỏ trong học tập.',
-    result: 'Những trải nghiệm này giúp mình hiểu hơn về sở thích, khả năng và hướng đi mà bản thân muốn theo đuổi.',
-    evidence: 'Có thể bổ sung ảnh chân dung hoặc những hình ảnh hoạt động cá nhân tại đây.'
-  },
-
-  education: {
-    label: 'EDUCATION',
-    title: 'Quá trình học tập',
-    description: 'Những dấu mốc trong quá trình học tập của mình.',
-    objective: 'Theo đuổi ngành Sư phạm Âm nhạc và tích lũy kiến thức về âm nhạc, nghệ thuật.',
-    process: 'Bổ sung thông tin về trường học, các môn học, khóa học và hoạt động đã tham gia.',
-    result: 'Bổ sung những kết quả và dấu mốc học tập đáng nhớ.',
-    evidence: 'Có thể bổ sung hình ảnh, chứng nhận hoặc sản phẩm học tập.'
-  },
-
-  skills: {
-    label: 'SKILLS',
-    title: 'Kỹ năng và năng lực',
-    description: 'Một số kỹ năng mình đang rèn luyện và phát triển.',
-    objective: 'Hoàn thiện khả năng âm nhạc và những kỹ năng cần thiết trong học tập.',
-    process: 'Bổ sung các kỹ năng thực tế như sử dụng nhạc cụ, làm việc nhóm, trình bày và ứng dụng công nghệ.',
-    result: 'Bổ sung những kỹ năng đã đạt được và minh chứng tương ứng.',
-    evidence: 'Có thể thêm video, hình ảnh hoặc sản phẩm thể hiện kỹ năng.'
-  },
-
-  interests: {
-    label: 'INTERESTS',
-    title: 'Sở thích và định hướng',
-    description: 'Những điều mình quan tâm và mong muốn thực hiện trong tương lai.',
-    objective: 'Tiếp tục khám phá âm nhạc và tìm kiếm những trải nghiệm phù hợp với bản thân.',
-    process: 'Bổ sung sở thích, hoạt động yêu thích và những lĩnh vực muốn tìm hiểu.',
-    result: 'Mục tiêu hướng đến là trở thành một người làm giáo dục âm nhạc có trách nhiệm và giàu nhiệt huyết.',
-    evidence: 'Có thể bổ sung hình ảnh hoạt động, biểu diễn hoặc những trải nghiệm đáng nhớ.'
-  }
-
-};
-
-</script>
+  </script>
 
 </body>
-</html>
 
+</html>
